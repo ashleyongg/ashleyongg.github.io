@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justin Bieber | Fan Page</title>
+  <style>
+    :root {
+      --ink: #211425;
+      --paper: #fff8f3;
+      --card: rgba(255, 255, 255, .74);
+      --pink: #e94d7b;
+      --purple: #74468f;
+      --muted: #6d6070;
+      --line: rgba(48, 25, 56, .12);
+      --shadow: 0 20px 50px rgba(84, 39, 83, .14);
+    }
+    body.night {
+      --ink: #fff5fc;
+      --paper: #1c1525;
+      --card: rgba(41, 29, 52, .78);
+      --pink: #ff86ae;
+      --purple: #c99cff;
+      --muted: #d1c4d4;
+      --line: rgba(255,255,255,.16);
+      --shadow: 0 20px 50px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; transition: background .35s, color .35s; }
+    .hero { min-height: 630px; position: relative; overflow: hidden; display: grid; align-items: center; background: linear-gradient(115deg, rgba(27,15,37,.82), rgba(105,43,98,.35)), url('https://live.staticflickr.com/1491/26577668795_113d9d55ae_o.jpg') center 28% / cover; color: white; }
+    .hero::after { content: ''; position: absolute; inset: auto -10% -240px; height: 390px; background: var(--paper); border-radius: 50% 50% 0 0; transform: rotate(-4deg); }
+    nav { position: absolute; top: 0; left: 0; right: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; padding: 26px max(5vw, 28px); }
+    .logo { letter-spacing: .18em; font-weight: 800; font-size: .82rem; }
+    .theme { border: 1px solid rgba(255,255,255,.6); border-radius: 999px; color: white; padding: 9px 14px; background: rgba(0,0,0,.12); cursor: pointer; font-weight: bold; }
+    .hero-content { position: relative; z-index: 1; width: min(820px, 90vw); margin: 50px auto 140px; }
+    .eyebrow { font-size: .8rem; letter-spacing: .2em; font-weight: bold; text-transform: uppercase; color: #ffd2e1; }
+    h1 { margin: 12px 0; max-width: 600px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(4rem, 11vw, 8rem); line-height: .82; letter-spacing: -.065em; }
+    .hero p { max-width: 440px; line-height: 1.65; font-size: 1.05rem; }
+    .button { display: inline-block; margin-top: 14px; padding: 13px 20px; background: #fff; color: #542d62; border: 0; border-radius: 4px; text-decoration: none; cursor: pointer; font-weight: 800; transition: transform .2s; }
+    .button:hover { transform: translateY(-3px); }
+    main { width: min(1050px, 90vw); margin: -28px auto 0; position: relative; z-index: 3; }
+    section { padding: 72px 0; }
+    .section-label { text-transform: uppercase; color: var(--pink); font-size: .75rem; letter-spacing: .18em; font-weight: 800; }
+    h2 { margin: 8px 0 18px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.25rem, 5vw, 3.6rem); letter-spacing: -.04em; }
+    .intro { display: grid; grid-template-columns: 1.1fr .9fr; gap: 70px; align-items: center; }
+    .intro p { line-height: 1.8; color: var(--muted); font-size: 1.05rem; }
+    .quote { padding: 34px; border-left: 4px solid var(--pink); background: var(--card); box-shadow: var(--shadow); border-radius: 0 14px 14px 0; font-family: Georgia, serif; font-size: 1.45rem; line-height: 1.45; }
+    .facts { border-top: 1px solid var(--line); }
+    .fact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .fact { min-height: 175px; padding: 25px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); transition: transform .25s, border-color .25s; }
+    .fact:hover { transform: translateY(-7px); border-color: var(--pink); }
+    .fact-number { font-family: Georgia, serif; font-size: 2.5rem; color: var(--purple); }
+    .fact p { margin-bottom: 0; line-height: 1.55; color: var(--muted); }
+    .songs { border-top: 1px solid var(--line); }
+    .song-list { padding: 0; margin: 25px 0 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .song { overflow: hidden; border-radius: 14px; background: var(--card); border: 1px solid var(--line); }
+    .cover { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: linear-gradient(135deg, var(--purple), var(--pink)); }
+    .song-info { padding: 18px 20px 22px; }
+    .song span { display: block; color: var(--pink); font-size: .75rem; font-weight: bold; letter-spacing: .16em; }
+    .song strong { display: block; margin-top: 10px; font-family: Georgia, serif; font-size: 1.35rem; }
+    .interactive { text-align: center; border-radius: 20px; padding: 55px 26px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; box-shadow: var(--shadow); }
+    .interactive h2 { margin-top: 0; }
+    #fact-display { min-height: 72px; max-width: 690px; margin: 22px auto; font-family: Georgia, serif; font-size: clamp(1.25rem, 3vw, 1.75rem); line-height: 1.45; }
+    .interactive .button { color: var(--purple); }
+    footer { padding: 32px; text-align: center; color: var(--muted); font-size: .88rem; }
+    footer a { color: var(--pink); }
+    @media (max-width: 700px) { .hero { min-height: 570px; background-position: 60% center; } .intro, .fact-grid, .song-list { grid-template-columns: 1fr; } .intro { gap: 28px; } section { padding: 48px 0; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav><span class="logo">THE BELIEBER CORNER</span><button class="theme" id="theme-toggle" aria-label="Toggle color theme">☾ Night mode</button></nav>
+    <div class="hero-content">
+      <div class="eyebrow">Singer · Songwriter · Storyteller</div>
+      <h1>Justin<br>Bieber</h1>
+      <p>Celebrating a global pop artist whose music has grown and changed with every era.</p>
+      <a class="button" href="#discover">Discover her story ↓</a>
+    </div>
+  </header>
+  <main>
+    <section class="intro" id="discover">
+      <div><div class="section-label">The Artist</div><h2>Every era has a soundtrack.</h2><p>Justin Bieber is a Canadian singer who rose to fame as a teenager and became one of pop music's most recognisable voices. His career moves from bright early pop songs to more mature R&amp;B-influenced music.</p><p>This small fan page celebrates the music, the evolution, and the energy that have kept fans listening through every chapter.</p></div>
+      <aside class="quote">“Music is a way to share a feeling that is sometimes hard to put into words.”</aside>
+    </section>
+    <section class="facts"><div class="section-label">Quick notes</div><h2>Three fun facts</h2>
+      <div class="fact-grid">
+        <article class="fact"><div class="fact-number">01</div><p>Justin was discovered after videos of his performances were posted online when he was a teenager.</p></article>
+        <article class="fact"><div class="fact-number">02</div><p>He was born in Stratford, Ontario, Canada, and learned several instruments while growing up.</p></article>
+        <article class="fact"><div class="fact-number">03</div><p>His fans are affectionately known as Beliebers—a name inspired by his surname.</p></article>
+      </div>
+    </section>
+    <section><div class="interactive"><div class="section-label" style="color:#ffe5ef">Interactive feature</div><h2>Pick a surprise Belieber fact</h2><p id="fact-display" aria-live="polite">Press the button for a little pop-star trivia.</p><button class="button" id="fact-button">Reveal a fact ✨</button></div></section>
+    <section class="songs"><div class="section-label">Fan favourites</div><h2>Top 6 songs</h2>
+      <ol class="song-list">
+        <li class="song"><img class="cover" src="https://en.wikipedia.org/wiki/Special:FilePath/Justin_Bieber_-_Purpose_(Official_Album_Cover).png" alt="Purpose album cover"><div class="song-info"><span>01 · 2015 · Purpose</span><strong>Sorry</strong></div></li>
+        <li class="song"><img class="cover" src="https://en.wikipedia.org/wiki/Special:FilePath/Justin_Bieber_-_Purpose_(Official_Album_Cover).png" alt="Purpose album cover"><div class="song-info"><span>02 · 2015 · Purpose</span><strong>Love Yourself</strong></div></li>
+        <li class="song"><img class="cover" src="https://en.wikipedia.org/wiki/Special:FilePath/Justin_Bieber_-_Justice.png" alt="Justice album cover"><div class="song-info"><span>03 · 2021 · Justice</span><strong>Peaches</strong></div></li>
+        <li class="song"><img class="cover" src="https://en.wikipedia.org/wiki/Special:FilePath/Justin_Bieber_-_Justice.png" alt="Justice album cover"><div class="song-info"><span>04 · 2021 · Justice</span><strong>Ghost</strong></div></li>
+        <li class="song"><img class="cover" src="https://en.wikipedia.org/wiki/Special:FilePath/Justin_Bieber_-_Changes.png" alt="Changes album cover"><div class="song-info"><span>05 · 2020 · Changes</span><strong>Intentions</strong></div></li>
+          <li class="song"><img class="cover" src="https://www.kindpng.com/picc/m/205-2058708_justin-bieber-my-world-2-0-album-cover-hd.png" alt="My World 2.0 album cover"><div class="song-info"><span>06 · 2010 · My World 2.0</span><strong>Baby</strong></div></li>
+      </ol>
+    </section>
+  </main>
+  <footer>Made with glitter, curiosity, and vanilla JavaScript. Photo by <a href="https://commons.wikimedia.org/wiki/File:Justin_Bieber_in_2015.jpg" target="_blank" rel="noopener">Lou Stejskal (CC BY 2.0)</a>.</footer>
+  <script>
+    const facts = [
+      'Justin was discovered through performance videos uploaded to YouTube.',
+      'He can play guitar, piano, drums, and trumpet.',
+      'His hometown is Stratford, in the Canadian province of Ontario.',
+      'His debut single “One Time” was released when he was just 15 years old.',
+      'Beliebers is the fan name used by Justin Bieber’s supporters.'
+    ];
+    let previous = -1;
+    document.getElementById('fact-button').addEventListener('click', () => {
+      let next;
+      do { next = Math.floor(Math.random() * facts.length); } while (next === previous);
+      previous = next;
+      document.getElementById('fact-display').textContent = facts[next];
+    });
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('night');
+      const dark = document.body.classList.contains('night');
+      document.getElementById('theme-toggle').textContent = dark ? '☀ Day mode' : '☾ Night mode';
+    });
+  </script>
+</body>
+</html>
