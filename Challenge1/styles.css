@@ -3,23 +3,28 @@ body{
     margin:0;
     background-color:azure ;
     font-family: Arial, Helvetica, sans-serif;
+    color:black;
 }
 
 .container{
     margin: auto;
-    padding: 10px ;
+    padding: 25px ;
+    max-width: 800px;
 }
 
 h1{
+    font-size: 3em;
     color:red;
     text-align: center;
     font-weight:bold; 
+    margin: 0 0 8px 0; 
 }
 
 .tagline{
     font-style: italic;
     text-align: center ; 
     color: grey;
+    margin: 0 0 24px 0; 
 }
 
 .mascot-placeholder{
@@ -34,40 +39,52 @@ h1{
 #mascot-image{
     width: 250px;
     height: 200px; 
+    margin: 0 auto;
 }
 
 .about{
-    line-height: 1.5;
-    padding: 3% ; 
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+    font-size: 1 rem;
 }
 
 .actions{
     text-align: center;
-    padding-bottom: 10% ;
+    margin:12px 0px 28px 0px;
 }
 
 .site-footer{
     text-align:center;
     color: grey;
+    font-size: 1 rem;
     border-top: 1px solid gainsboro ; 
-    
+    padding-top: 16px;
+    margin-top:24px;
 }
 
 .buy-tickets{
     background-color: green;
     color:white ;
-    padding: 10px 15px; 
+    padding: 12px 19px; 
     border-radius: 10% ;
-    margin-right: 10px ; 
-    box-shadow: lightblue;
+    margin-right: 20px ; 
+    margin-bottom: 20px; 
+    box-shadow: 0px 2px 12px rgb(104, 213, 250);     /*for the halo around*/
+    transition: background 120ms ease, transform 80ms ease; 
+    font-size:1 rem;
+    font-weight:bold;
 }
 
 .make-donation{
     background-color: blue;
     color:white ;
-    padding: 10px 15px; 
+    padding: 12px 19px; 
     border-radius: 10% ;
-    box-shadow: purple;
+    box-shadow: 0px 2px 12px purple;
+    transition: background 120ms ease, transform 80ms ease; 
+    font-size:1 rem;
+    font-weight:bold;
+    margin-right: 18px ; 
 }
 
 .buy-tickets:hover{

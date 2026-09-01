@@ -142,11 +142,11 @@ body{
    border: 1px solid grey
 } 
 
-.legend .dot .ride{
+.legend .dot.ride{
    background-color:red;
 }
 
-.legend .dot .landmark{
+.legend .dot.landmark{
    background-color: blue;
 }
 
@@ -175,10 +175,9 @@ body{
 
 /* 9) Footer (muted, centered) */
 .site-footer{
-   border-top: 2px solid grey;
+   border-top: 2px solid rgb(210, 209, 209);
    padding-top: 14px; 
    color:grey; 
-
 }
 
 /* 10) Getting Here & Around section styling  */
@@ -200,7 +199,7 @@ body{
 }
 
 .transport-info,.transport-discounts  {
-   background-color: antiquewhite;
+   background-color: rgb(241, 239, 235);
    text-align: left; 
    border-radius: 10px;
    padding:18px; 
