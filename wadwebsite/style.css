@@ -1,0 +1,119 @@
+
+:root {
+  --dark-pink: #b85c7a;
+  --pink: #f6b9cc;
+  --light-pink: #ffe5ee;
+  --pale-pink: #fff5f8;
+  --white: #ffffff;
+  --text: #5f3d4a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background:
+    radial-gradient(circle at top left, #ffd8e6 0, transparent 35%),
+    radial-gradient(circle at bottom right, #ffeaf1 0, transparent 30%),
+    var(--pale-pink);
+  color: var(--text);
+  max-width: 900px;
+  min-height: 100px;
+  margin: auto;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+h1,h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+  margin-bottom: 8px;
+  color: var(--dark-pink);
+  font-size: clamp(3.5rem, 7vw, 4.5rem);
+  line-height: 1;
+}
+
+h1 + p {
+  margin: 0 0 32px;
+  color: #936172;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.profile-photo {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 0 auto 32px;
+  object-fit: cover;
+  border: 7px solid var(--white);
+  border-radius: 50%;
+  box-shadow: 0 12px 30px rgba(184, 92, 122, 0.24);
+}
+
+.bio-box {
+  max-width: 680px;
+  margin: 0 auto 52px;
+  padding: 28px 32px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--pink);
+  border-radius: 22px;
+  box-shadow: 0 14px 35px rgba(184, 92, 122, 0.12);
+  text-align: left;
+}
+
+.bio-box h2 {
+  margin-top: 0;
+  color: var(--dark-pink);
+  font-size: 1.8rem;
+}
+
+.bio-box p {
+  margin-bottom: 0;
+  line-height: 1.8; 
+  font-size: 21px;
+}
+
+body h2 {
+  margin-bottom: 20px;
+  color: var(--dark-pink);
+  font-size: 2rem;
+}
+
+.bio-box h2::before {
+  content: "🩷";
+}
+
+body h2::before {
+  content: "✈️ ";
+}
+
+iframe {
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 6px solid var(--white);
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(184, 92, 122, 0.2);
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 40px 18px;
+  }
+
+  .bio-box {
+    padding: 24px;
+  }
+
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+}
+
